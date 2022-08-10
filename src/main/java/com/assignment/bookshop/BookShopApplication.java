@@ -27,10 +27,6 @@ public class BookShopApplication implements ApplicationRunner {
 		application.run(args);
 	}
 
-	/**
-	 * Run method to initiate log processing
-	 * @param args command line arguments
-	 */
 	@Override
 	public void run(ApplicationArguments args) {
 		String[] arguments = args.getSourceArgs();
@@ -40,10 +36,10 @@ public class BookShopApplication implements ApplicationRunner {
 
 		fileService.extractAllBooksAvailable(arguments[0]);
 		String filePath = arguments[1];
-		System.out.println("file1: " +arguments[0]+ " file2: " +arguments[1]);
 		List<String> books = fileService.extractBooksToBuy(filePath);
-		System.out.println("books: " +books);
 		BigDecimal finalAmount = checkoutService.calculateFinalAmount(books);
-		System.out.println("Total amount to be paid: " +finalAmount);
+		System.out.println("#######################################");
+		System.out.println("Final amount to be paid: " +finalAmount);
+		System.out.println("#######################################");
 	}
 }

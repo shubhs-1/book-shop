@@ -26,15 +26,12 @@ public class CheckoutServiceImpl implements CheckoutService {
                 Book book = AvailableBooksCache.getAllAvailableBooks().get(bookTitle);
                 int year = book.getYear();
                 BigDecimal price = book.getPrice();
-                System.out.println("year " +year+ " price" +price);
 
                 if(year > 2000) {
                     BigDecimal discountedPrice = discountService.getAmountPostTenPercentDiscount(price);
                     totalAmount = totalAmount.add(discountedPrice);
-                    System.out.println("total amount : " +totalAmount);
                 } else {
                     totalAmount = totalAmount.add(price);
-                    System.out.println("amount adding : " +totalAmount);
                 }
                 totalAmount = totalAmount.setScale(2, BigDecimal.ROUND_HALF_EVEN);
             }

@@ -21,7 +21,6 @@ public class FileServiceImpl implements FileService {
         List<String> books = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println("Line: " +line);
                 books.add(line);
             }
         } catch (FileNotFoundException fnfe) {
@@ -40,7 +39,6 @@ public class FileServiceImpl implements FileService {
                 Gson gson = new Gson();
                 JsonObject object = JsonParser.parseString(line).getAsJsonObject();
                 Book book = gson.fromJson(object, Book.class);
-                System.out.println("Cache book: " +book);
                 AvailableBooksCache.getAllAvailableBooks().putIfAbsent(book.getTitle(), book);
             }
         } catch (FileNotFoundException fnfe) {
