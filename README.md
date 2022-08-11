@@ -3,8 +3,8 @@
 ## Description
 This SpringBoot application is an automation software solution for purchasing and checkout process of a bookshop.
 
-There are two files consisting below data,
-1. List of all available books with their required details like title, price and year.
+There will be two files consisting of below data,
+1. List of all available books with their required details like title, price and year. (In JSON format)
 2. List of book titles which are to be bought by customers.
 
 There are two types of offers/discounts as well,
@@ -56,5 +56,6 @@ There are two types of offers/discounts as well,
   Great Expectations
   ```
 ### Output
+<img width="541" alt="image" src="https://user-images.githubusercontent.com/30280454/184234201-b754b89c-b8ab-439d-940a-5eaa2503b8ea.png">
 
 
