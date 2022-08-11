@@ -6,17 +6,19 @@ import com.assignment.bookshop.service.FileService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log4j2
 @Service
 public class FileServiceImpl implements FileService {
 
     @Override
-    public List<String> extractBooksToBuy(String path) {
+    public List<String> extractBooksToBuy(String path) throws IOException {
         String line;
         List<String> books = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
@@ -24,15 +26,17 @@ public class FileServiceImpl implements FileService {
                 books.add(line);
             }
         } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
+            log.error("File not found at path: {}", path);
+            throw new FileNotFoundException("File not found for given path");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Exception occurred while reading file at path: {}", path);
+            throw new IOException("Exception occurred while reading the file");
         }
         return books;
     }
 
     @Override
-    public void extractAllBooksAvailable(String path) {
+    public void extractAllBooksAvailable(String path) throws IOException {
         String line;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             while ((line = bufferedReader.readLine()) != null) {
@@ -42,9 +46,11 @@ public class FileServiceImpl implements FileService {
                 AvailableBooksCache.getAllAvailableBooks().putIfAbsent(book.getTitle(), book);
             }
         } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
+            log.error("File not found at path: {}", path);
+            throw new FileNotFoundException("File not found for given path");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Exception occurred while reading file at path: {}", path);
+            throw new IOException("Exception while reading the file");
         }
     }
 }
