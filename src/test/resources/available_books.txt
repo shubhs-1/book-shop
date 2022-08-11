@@ -1,0 +1,11 @@
+{ "title": "Moby Dick", "price": 15.20, "year": 1851 }
+{ "title": "The Terrible Privacy of Maxwell Sim", "price": 13.14, "year": 2010 }
+{ "title": "Still Life With Woodpecker", "price": 11.05, "year": 1980 }
+{ "title": "Sleeping Murder", "price": 10.24, "year": 1976 }
+{ "title": "Three Men in a Boat",  "price": 12.87, "year": 1889 }
+{ "title": "The Time Machine",  "price": 10.43, "year": 1895 }
+{ "title": "The Caves of Steel",  "price": 8.12, "year": 1954 }
+{ "title": "Idle Thoughts of an Idle Fellow", "price": 7.32, "year": 1886 }
+{ "title": "A Christmas Carol", "price": 4.23, "year": 1843 }
+{ "title": "A Tale of Two Cities", "price": 6.32, "year": 1859 }
+{ "title": "Great Expectations", "price": 13.21, "year": 1861 }
