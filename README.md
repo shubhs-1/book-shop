@@ -42,5 +42,19 @@ There are two types of offers/discounts as well,
     ```
     In above command, 
     
-    available_books.txt - catalogue of all available books with required details
-    books_to_buy.txt - list of books to buy
+    - available_books.txt - catalogue of all available books with required details
+    
+    - books_to_buy.txt - list of books to buy
+
+
+## Sample Input/Output
+
+### Input ( books_to_buy.txt )
+  ```
+  Still Life With Woodpecker
+  Three Men in a Boat
+  Great Expectations
+  ```
+### Output
+
+
