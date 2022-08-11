@@ -33,7 +33,7 @@ public class CheckoutServiceImpl implements CheckoutService {
                 } else {
                     totalAmount = totalAmount.add(price);
                 }
-                totalAmount = totalAmount.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+                totalAmount = totalAmount.setScale(2, RoundingMode.HALF_EVEN);
             }
         }
 
