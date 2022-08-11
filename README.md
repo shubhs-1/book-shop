@@ -11,6 +11,8 @@ There are two types of offers/discounts as well,
 1. 10% discount for all books published after year - 2000.
 2. 5% discount to books worth more than £30 in total.
 
+The application will calculate the final amount to be paid by customer.
+
 
 ## Assumptions
 1. Book titles are distinct.
