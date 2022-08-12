@@ -11,12 +11,21 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
 
+/**
+ * Class implementing the CheckoutService interface
+ * @author Shubham Kalaria
+ */
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
     @Autowired
     private DiscountService discountService;
 
+    /**
+     * Method to calculate final amount to be paid after applying offers/discounts
+     * @param books list of book titles
+     * @return final amount to be paid
+     */
     @Override
     public BigDecimal calculateFinalAmount(List<String> books) {
         BigDecimal totalAmount = new BigDecimal(0);

@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * POJO class to represent a Book
+ * @author Shubham Kalaria
+ */
 @Data
 @Builder
 @NoArgsConstructor

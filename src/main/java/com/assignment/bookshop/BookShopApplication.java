@@ -13,6 +13,10 @@ import org.springframework.util.ObjectUtils;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Main application entry point class
+ * @author Shubham Kalaria
+ */
 @Log4j2
 @SpringBootApplication
 public class BookShopApplication implements ApplicationRunner {
@@ -23,12 +27,21 @@ public class BookShopApplication implements ApplicationRunner {
 	@Autowired
 	FileService fileService;
 
+	/**
+	 * Main method to initiate application execution
+	 * @param args command line arguments
+	 */
 	public static void main(String[] args) {
 		SpringApplication application = new SpringApplication(BookShopApplication.class);
 		application.setHeadless(false);
 		application.run(args);
 	}
 
+	/**
+	 * Application run method.
+	 * It prints the final amount to be paid after applying offers/discounts for books ordered.
+	 * @param args command line arguments
+	 */
 	@Override
 	public void run(ApplicationArguments args) {
 		String[] arguments = args.getSourceArgs();

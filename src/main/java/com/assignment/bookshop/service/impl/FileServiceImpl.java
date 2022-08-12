@@ -13,10 +13,20 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class implementing the FileService interface
+ * @author Shubham Kalaria
+ */
 @Log4j2
 @Service
 public class FileServiceImpl implements FileService {
 
+    /**
+     * Method to get the list of books to buy given file path
+     * @param path path of the file
+     * @return list of books to buy
+     * @throws IOException
+     */
     @Override
     public List<String> extractBooksToBuy(String path) throws IOException {
         String line;
@@ -35,6 +45,11 @@ public class FileServiceImpl implements FileService {
         return books;
     }
 
+    /**
+     * Method to store all the available books in a cache given file path
+     * @param path path of the file
+     * @throws IOException
+     */
     @Override
     public void extractAllBooksAvailable(String path) throws IOException {
         String line;
