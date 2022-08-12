@@ -16,8 +16,8 @@ The application will calculate the final amount to be paid by customer.
 
 ## Assumptions
 1. Book titles are distinct.
-2. Currency is uniform across all books available.
-3. A book to buy is always present in the list of available books.
+2. Book prices/rates are defined in single currency.
+3. Books to buy are present in the list/catalogue of available books.
 
 
 ## Requirements
