@@ -10,8 +10,9 @@ import java.util.Objects;
  * @author Shubham Kalaria
  */
 public class AvailableBooksCache {
-    public static HashMap<String, Book> availableBooks = new HashMap<>();
+    private static HashMap<String, Book> availableBooks = null;
 
+    private AvailableBooksCache() { }
     /**
      * Method to get all the available books in cache
      * @return Map to store required details of a book given book's title
